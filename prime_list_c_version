@@ -1,0 +1,53 @@
+#include <stdio.h>
+int a,b;
+int n;
+int flag;
+int i = 2;
+int true = 1;
+int false = 0;
+int init = 2;
+int j = 1;
+int div;
+void isDivisor()
+{
+    i = init;
+    while(i <= n -1)
+    {
+        j = 0;
+        div = i * j;
+        while(div <= n)
+        {
+            if(n - (i*j) == 0)
+            {
+                flag = true;
+                return;
+            }
+            j = j + 1;
+            div = i * j;
+        }
+        i = i + 1;
+    }
+    return;
+}
+void isPrime()
+{
+    flag = false;
+    isDivisor();
+    if(flag -true != 0 ){
+        printf("%d\n",n);
+    }
+    return;
+}
+
+int main() {
+    scanf("%d",&a);
+    scanf("%d",&b);
+    n = a;
+    if(a < init) n = init; //if(a - 2 < 0)
+    while(n <= b) //if(0 > b - n)
+    {
+        isPrime();
+        n = n + 1;
+    }
+    return 0;
+}
